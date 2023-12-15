@@ -1,24 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import fetchApiData from '../apiService';
+import React, {  useState } from 'react';
+import '../styling.css';
 
 const IPhoneUnsupported = () => {
-  const [redirectUrl, setRedirectUrl] = useState(null);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-      const data = await fetchApiData();
-      const url = data.redirectUrl;
-      setRedirectUrl(url);
-  };
-
-  useEffect(() => {
-    if (redirectUrl) {
-      window.location.href = redirectUrl;
-    }
-  }, [redirectUrl]);
 
 
   const [selectedLanguage, setSelectedLanguage] = useState('en');
@@ -49,7 +33,7 @@ const IPhoneUnsupported = () => {
  
 
   return (
-    <div >
+    <div className="container">
       <h1>Iphoneunsuppported</h1>
       {/* Add your component content here */}
       
