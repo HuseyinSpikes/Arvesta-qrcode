@@ -1,16 +1,24 @@
 // App.js
-
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import ResultComponent from './ResultComponent';
+import AndroidSupported from './Components/AndroidSupported';
+import AndroidUnsupported from './Components/AndroidUnsupported';
+import IPhoneSupported from './Components/iPhoneSupported';
+import Fallback from './Components/Fallback';
+import IPhoneUnsupported from './Components/iPhoneUnsupported';
 
 const App = () => {
   return (
-    <div>
-      <h1>Your React App</h1>
-      
-      <ResultComponent />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/AndroidSupported" element={<AndroidSupported />} />
+        <Route path="/AndroidUnsupported" element={<AndroidUnsupported />} />
+        <Route path="/IPhoneSupported" element={<IPhoneSupported />} />
+        <Route path="/IPhoneUnsupported" element={<IPhoneUnsupported />} />
+        <Route path="/Fallback" element={<Fallback />} />
+      </Routes>
+    </Router>
   );
 };
 
